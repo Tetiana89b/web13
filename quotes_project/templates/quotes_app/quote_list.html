@@ -1,0 +1,13 @@
+{% for quote in quotes %}
+<div class="quote">
+    <h3>{{ quote.author }}</h3>
+    <p>{{ quote.quote }}</p>
+    <ul>
+        {% for tag in quote.tags.all %}
+        <li>{{ tag }}</li>
+        {% endfor %}
+    </ul>
+</div>
+{% empty %}
+<p>No quotes available.</p>
+{% endfor %}

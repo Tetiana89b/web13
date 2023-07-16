@@ -1,0 +1,10 @@
+<h2>Quotes with tag: {{ tag_name }}</h2>
+{% for quote in quotes %}
+<h3>{{ quote.quote }}</h3>
+<p>Author: {{ quote.author }}</p>
+<p>Tags:
+    {% for tag in quote.tags.all %}
+    <a href="{% url 'quotes_app:quote_list_by_tag' tag_name=tag.name %}">{{ tag.name }}</a>
+    {% endfor %}
+</p>
+{% endfor %}

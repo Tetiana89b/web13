@@ -1,0 +1,12 @@
+
+
+{% block content %}
+<h1>Authors</h1>
+<ul>
+    {% for author in authors %}
+    <div>
+        <a href="{% url 'quotes_app:quote_list' author_id=author.id %}">{{ author.fullname }}</a>
+    </div>
+    {% endfor %}
+</ul>
+{% endblock %}

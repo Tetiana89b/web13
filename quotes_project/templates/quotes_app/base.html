@@ -1,0 +1,22 @@
+<nav style="margin-bottom: 20px; border-bottom: 2px solid; padding-left: 30px">
+    {% if user.is_authenticated %}
+    <ul>
+        <li>Welcome <b>{{ user.username }}!</b></li>
+        <li><a href="{% url 'accounts:logout' %}" role="button">Logout</a></li>
+    </ul>
+    <ul>
+        <li><a href="{% url 'quotes_app:add_author' %}" role="button">Add authors</a></li>
+        <li><a href="{% url 'quotes_app:add_quote' %}" role="button">Add quote</a></li>
+        <li><a href="{% url 'quotes_app:author_list' %}" role="button">Authors</a></li>
+        <li><a href="{% url 'quotes_app:quote_list'  %}">Quotes</a></li>
+    </ul>
+
+    {% else %}
+    <ul>
+        <li><a href="{% url 'accounts:register' %}" role="button">Sign Up</a></li>
+        <li><a href="{% url 'accounts:login' %}" role="button">Login</a></li>
+        <li><a href="{% url 'quotes_app:author_list' %}" role="button">Authors</a></li>
+        <li><a href="{% url 'quotes_app:quote_list' %}">Quotes</a></li>
+    </ul>
+    {% endif %}
+</nav>

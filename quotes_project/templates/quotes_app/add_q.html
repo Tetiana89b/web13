@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Quote</title>
+</head>
+
+<body>
+    <h2>Add Quote</h2>
+    <form method="post" action="{% url 'quotes_app:add_quote' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add</button>
+    </form>
+</body>
+
+</html>
+
